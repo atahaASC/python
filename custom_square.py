@@ -28,6 +28,7 @@ def drawA(size):
 
 def drawT(size):
     penDown()
+    
     forward(1, size * 0.275)
     turnBy(90, "deg")
     forward(1, size * 0.8)
@@ -35,5 +36,6 @@ def drawT(size):
     forward(1, size * 0.275)
     backward(1, size * 0.45)
     
+    penUp()
     
 drawA(5)
