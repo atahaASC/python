@@ -1,13 +1,39 @@
 from Myro import *
 
-size = float(raw_input("What size do you want your square to be? (Integer only, please)"))
-
 init("sim")
+penUp()
 
-i = 0
+backward(1, 2)
 
-def oneSide():
+def drawA(size):
+    penDown()
+
+    turnBy(70, "deg")
+    forward(1, size)
+    turnBy(-140, "deg")
+    forward(1, size*0.48)
+    turnBy(-110, "deg")
+    forward(1, size*0.35)
+    backward(1, size*0.35)
+    turnBy(110, "deg")
+    forward(1, size*0.52)
+    
+    penUp()
+    
+    #Repositioning for next letter
+    turnBy(70, "deg")
+    forward(1, size * 0.2)
+    
+    drawT(size)
+
+def drawT(size):
+    penDown()
+    forward(1, size * 0.275)
     turnBy(90, "deg")
-
-while i < 4:
-    oneSide()
+    forward(1, size * 0.8)
+    turnBy(90, "deg")
+    forward(1, size * 0.275)
+    backward(1, size * 0.45)
+    
+    
+drawA(5)
