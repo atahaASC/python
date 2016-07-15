@@ -1,41 +1,18 @@
 from Myro import *
 
 init("sim")
-penUp()
 
-backward(1, 2)
+#Makes one square of given size
 
-def drawA(size):
-    penDown()
+init("sim")
+penDown()
 
-    turnBy(70, "deg")
+def makeSide(size):
     forward(1, size)
-    turnBy(-140, "deg")
-    forward(1, size*0.48)
-    turnBy(-110, "deg")
-    forward(1, size*0.35)
-    backward(1, size*0.35)
-    turnBy(110, "deg")
-    forward(1, size*0.52)
-    
-    penUp()
-    
-    #Repositioning for next letter
-    turnBy(70, "deg")
-    forward(1, size * 0.2)
-    
-    drawT(size)
+    turnBy(90, "deg")
 
-def drawT(size):
-    penDown()
-    
-    forward(1, size * 0.275)
-    turnBy(90, "deg")
-    forward(1, size * 0.8)
-    turnBy(90, "deg")
-    forward(1, size * 0.275)
-    backward(1, size * 0.45)
-    
-    penUp()
-    
-drawA(5)
+i = 0
+
+while i < 4:
+    makeSide(1)
+    i = i + 1
