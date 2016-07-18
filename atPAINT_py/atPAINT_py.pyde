@@ -23,7 +23,7 @@ def draw():
     noStroke()
     
     #Create Menu
-    fill(200, 200, 200)
+    fill(150, 150, 150)
     rect(W * 0.85, H * 0.5, W * 0.3, H)
     
     #Text
@@ -47,6 +47,13 @@ def draw():
     
     fill(0, 0, 255)
     rect(W * 0.925, H * 0.5, W * 0.05, W * 0.05)
+    
+    fill(200, 200, 200)
+    rect(W * 0.85, H * 0.75, W * 0.2, H * 0.15)
+    
+    fill(0, 0, 0)
+    textSize(W * 0.02)
+    text("CLEAR CANVAS", W * 0.85, H * 0.75)
     
     if mousePressed:
         if mouseX < W * 0.7 and mouseX > W * 0.01:
@@ -83,3 +90,5 @@ def mouseClicked():
         currentColor = [255,0,0]
     elif mouseX < (W * 0.925) + (W * 0.025) and mouseX > (W * 0.925) - (W * 0.025) and mouseY < (H * 0.5) + (W * 0.025) and mouseY > (H * 0.5) - (W * 0.025):
         currentColor = [0,0,255]
+    elif mouseX < (W * 0.85) + (W * 0.1) and mouseX > (W * 0.85) - (W * 0.1) and mouseY < (H * 0.75) + (H * 0.075) and mouseY > (H * 0.75) - (H * 0.075):
+        background(255, 255, 255)
