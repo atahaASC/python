@@ -16,17 +16,20 @@ gameList = [
 
 timesClicked = 0
 
+winC = 0
+winR = 0
+
 def setup():
-    global gameList    
+    global gameList,winC,winR
     
     size(500, 500)
     background(255)
-    
-    gameList[randint(0,4)][randint(0,4)] = 1
+    winC = 0#randint(0,4)
+    winR = 0#randint(0,4)
+    gameList[winR][winC] = 1
     
 def draw():
-    global gameList
-    global timesClicked
+    global gameList, timesClicked, winC, winR
     
     background(255)
     
@@ -36,10 +39,10 @@ def draw():
         
         i = 0
         while i < 5:
-            if gameList[j][i] == 0 or gameList[j][i] == 1:
+            if gameList[j][i] == 0 or gameList[j][i] == 1: #
                 fill(0, 0, 255)
             elif gameList[j][i] == 2:
-                fill(0, 255, 0)
+                fill(0, 255, 0)                
             elif gameList[j][i] == -1:
                 fill(255, 0, 0)
             
@@ -49,18 +52,27 @@ def draw():
         
         j = j + 1
         
-    if timesClicked == 5:
+    if gameList[winR][winC] == 2:
+        fill(0,0,255)
+        noStroke()
+        
+        fill(255,255,0)
+        textSize(32)
+        textAlign(CENTER,CENTER)
+        text("I'm Surprised\nYou Won", 250,250)
+
+    elif timesClicked == 5:
         fill(255)
         noStroke()
         
         textSize(32)
         textAlign(CENTER, CENTER)
         text("YOU HAVE FAILED! (CLAP NOW)", 250, 250)
-        
+
 def mouseClicked():
-    global timesClicked
+    global timesClicked, gameList, winC, winR
     
-    if timesClicked < 5:
+    if timesClicked < 5 and gameList[winR][winC] != 2:
         global gameList
         
         row = 0
