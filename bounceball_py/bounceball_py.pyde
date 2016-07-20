@@ -27,7 +27,8 @@ def draw():
     
     background(255)
     fill(0, 0, 255)
-    ellipse(xCoordinate, yCoordinate, 30, 30)
+    img = loadImage("drake.png")
+    image(img, mouseX, mouseY, 30, W * 0.05)
     
     #Paddle
     fill(255, 0, 0)
